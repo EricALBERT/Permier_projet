@@ -37,7 +37,7 @@ Ces relais sont des relais physiques branchés sur le port P1 des compteurs Smar
 
 == Données techniques du relais TECH4U BRM-502-B Boilermind 5.0
 
-image::./image/Tech4U-Bailermind_5_BRM-502-B.png[BRM-502_B,200,align="center"]
+image::./img/Tech4U-Bailermind_5_BRM-502-B.png[BRM-502_B,200,align="center"]
 [cols="^1,1]
 |==========
 |Convient pour le protocole SmartMeter:         |DSMR 5.0 version Belge
@@ -114,12 +114,12 @@ Le choix a été fait du matériel de test suivant:
 * 12 convertisseurs 220VCA qui liront les sorties des Boilermind (contact sec) et adapteront les signaux pour les rendre compatible avec les entrées de contrôle du RPi
 
 === Le Raspberry Pi
-image::./image/rpi-4b.png[rpi-4b,400,align="center"]
+image::./img/rpi-4b.png[rpi-4b,400,align="center"]
 Le Raspberry Pi est un modèle 4 avec 4GB de RAM. +
 L'OS installé est le Raspberry Pi OS 10 (Buster).
 
 === La carte d'interface entrées/sorties
-image::./image/UniPi-11-top.jpg[UniPi-11-top,400,align="center"]
+image::./img/UniPi-11-top.jpg[UniPi-11-top,400,align="center"]
 La carte d'interface choisie est l' *Unipi 1.1 d'Unipi technology* qui comprend notamment:
 
 - Relays: 8 relais 250VAC@5A ou 24VDC@5A
@@ -152,23 +152,23 @@ Il faut envoyer les trames port P1 vers 12 Boilermind 5, il nous faut donc 12 so
 
 Nous avons utilisé un premier splitter pour rail DIN, 1 entrées et 3 sorties, le *Tech4U P1 port splitter DIN (1A) (P1H-203-1A)*.
 
-image::./image/Tech4U-P1_splitter_DIN_1A_P1H-203.png[P1h-203,200,align="center"]
+image::./img/Tech4U-P1_splitter_DIN_1A_P1H-203.png[P1h-203,200,align="center"]
 Chaque sortie de ce splitter est entrée dans un splitter 'volant', 1 entrée et 4 sorties, le *Tech4U P1 port splitter 4x (P1H-006)*.
 
-image::./image/Tech4U_P1_port_splitter_4x_P1H-006.png[P1H-006,200,align="center"]
+image::./img/Tech4U_P1_port_splitter_4x_P1H-006.png[P1H-006,200,align="center"]
 Nous avons donc nos 3x4=12 port P1 à envoyer vers les Boilermind 5.
 
 === Les Boilermind 5.0
 Le Boilermind est le relais à tester
 
-image::./image/Tech4U-Bailermind_5_BRM-502-B.png[BRM-502_B,200,align="center"]
+image::./img/Tech4U-Bailermind_5_BRM-502-B.png[BRM-502_B,200,align="center"]
 Il s'agit d'un appareil pour rail DIN qui analyse les trames du port P1 et réagit à la ligne Tarif de la trame en ouvrant ou fermant son relais. +
 Dans sa version Belge (-B) le relais est ouvert lorsque le tarif est T1 (jour) et fermé lorsque le tarif est T2 (nuit).
 
 === Les convertisseurs 220VCA > entrées RPI
 Nous avons choisi le Solid State Relay Wago 857-708
 
-image::./image/wago_857-708.png[wago_857-708,600,align="center"]
+image::./img/wago_857-708.png[wago_857-708,600,align="center"]
 [cols="^1,1]
 |==========
 |Nominal input voltage Un:                      |220 V AC/DC
